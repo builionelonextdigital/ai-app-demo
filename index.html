@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Holiday Joy</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f9f506",
+              "background-light": "#f8f8f5",
+              "background-dark": "#23220f",
+              "christmas-red": "#D42426",
+              "christmas-green": "#165B33",
+              "christmas-gold": "#F8B229",
+            },
+            fontFamily: {
+              "display": ["Spline Sans", "sans-serif"]
+            },
+            animation: {
+              "fade-in-down": "fadeInDown 0.8s ease-out forwards",
+              "bounce-slight": "bounceSlight 2s infinite",
+            },
+            keyframes: {
+              fadeInDown: {
+                "0%": { opacity: "0", transform: "translateY(-20px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              bounceSlight: {
+                "0%, 100%": { transform: "translateY(-3%)" },
+                "50%": { transform: "translateY(0)" }
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Spline Sans', sans-serif;
+        -webkit-tap-highlight-color: transparent;
+      }
+      /* Custom Snow Overlay Animation */
+      .snow-overlay {
+          background-image: radial-gradient(circle, #fff 10%, transparent 10%), radial-gradient(circle, #fff 10%, transparent 10%);
+          background-size: 20px 20px;
+          background-position: 0 0, 10px 10px;
+          opacity: 0.3;
+          animation: snowfall 10s linear infinite;
+      }
+      @keyframes snowfall {
+          0% { background-position: 0 0, 10px 10px; }
+          100% { background-position: 100px 100px, 110px 110px; }
+      }
+      
+      /* Material Symbol Filled Variant Helper */
+      .material-symbols-outlined.filled {
+        font-variation-settings: 'FILL' 1;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "canvas-confetti": "https://esm.sh/canvas-confetti@^1.9.4"
+  }
+}
+</script>
+</head>
+  <body class="bg-background-light dark:bg-background-dark text-slate-900">
+    <div id="root"></div>
+  </body>
+</html>
